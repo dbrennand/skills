@@ -1,0 +1,20 @@
+{
+  "name": "pr-description-markdown",
+  "version": "0.1.0",
+  "description": "Codex skill for drafting concise, reviewer-friendly pull request descriptions.",
+  "author": {
+    "name": "dbrennand"
+  },
+  "homepage": "https://github.com/dbrennand/skills",
+  "repository": "https://github.com/dbrennand/skills",
+  "skills": "./skills/",
+  "interface": {
+    "displayName": "Pr Description Markdown",
+    "shortDescription": "Draft or revise PR descriptions in a consistent Markdown format.",
+    "longDescription": "Adds a Codex skill that structures PR descriptions with Summary, What, Why, optional Review Notes, and Validation sections.",
+    "developerName": "dbrennand",
+    "category": "Productivity",
+    "capabilities": [],
+    "defaultPrompt": "Help me draft or revise a pull request description using the pr-description-markdown format."
+  }
+}

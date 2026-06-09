@@ -1,0 +1,20 @@
+{
+  "name": "dbrennand-skills",
+  "interface": {
+    "displayName": "dbrennand skills"
+  },
+  "plugins": [
+    {
+      "name": "pr-description-markdown",
+      "source": {
+        "source": "local",
+        "path": "./plugins/pr-description-markdown"
+      },
+      "policy": {
+        "installation": "AVAILABLE",
+        "authentication": "ON_INSTALL"
+      },
+      "category": "Productivity"
+    }
+  ]
+}
