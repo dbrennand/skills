@@ -1,6 +1,6 @@
 ---
 name: conventional-commit-message
-description: Use when writing, rewriting, or tightening a Git commit message into Conventional Commits 1.0.0 format. Produces a commit subject in `<type>[optional scope][!]: <description>` form and adds a body or footers only when the change needs that extra context.
+description: "Use when writing, rewriting, or tightening a Git commit message into Conventional Commits 1.0.0 format. Produces a commit subject in `<type>[optional scope][!]: <description>` form and adds a body or footers only when the change needs that extra context."
 ---
 
 # Conventional Commit Message
