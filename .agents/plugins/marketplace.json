@@ -5,10 +5,10 @@
   },
   "plugins": [
     {
-      "name": "pr-body-markdown",
+      "name": "git",
       "source": {
         "source": "local",
-        "path": "./plugins/pr-body-markdown"
+        "path": "./plugins/git"
       },
       "policy": {
         "installation": "AVAILABLE",
