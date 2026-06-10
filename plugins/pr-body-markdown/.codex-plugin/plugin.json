@@ -1,0 +1,20 @@
+{
+  "name": "pr-body-markdown",
+  "version": "0.1.1",
+  "description": "Codex skill for drafting polished, reviewer-friendly pull request bodies.",
+  "author": {
+    "name": "dbrennand"
+  },
+  "homepage": "https://github.com/dbrennand/skills",
+  "repository": "https://github.com/dbrennand/skills",
+  "skills": "./skills/",
+  "interface": {
+    "displayName": "PR Body Markdown",
+    "shortDescription": "Draft or revise polished PR bodies with a clean Markdown structure.",
+    "longDescription": "Adds a Codex skill that favors concise summaries, grouped implementation details, and a clear test plan for reviewer-friendly PR bodies.",
+    "developerName": "dbrennand",
+    "category": "Productivity",
+    "capabilities": [],
+    "defaultPrompt": "Help me draft or revise a polished pull request body with a concise summary, grouped details, and a clear test plan."
+  }
+}

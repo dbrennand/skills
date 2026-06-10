@@ -1,0 +1,9 @@
+repos:
+  - repo: https://github.com/DavidAnson/markdownlint-cli2
+    rev: 996abf60411a8d954288ac9856aae7602b80cbda # v0.22.1
+    hooks:
+      - id: markdownlint-cli2
+        args:
+          - --config
+          - .markdownlint.jsonc
+        files: ^(README\.md|plugins/.+/SKILL\.md)$
