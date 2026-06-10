@@ -1,75 +1,78 @@
 ---
 name: pr-body-markdown
-description: Use when drafting or updating a GitHub pull request body and the user wants a consistent Markdown format that is useful for reviewers. Applies Summary, What, Why, optional Review Notes, and Validation sections with concise, accurate content.
+description: Use when drafting or updating a GitHub pull request body and the user wants a clean, reviewer-friendly Markdown format. Produces a concise summary, grouped implementation details, and a clear test plan with accurate scope and testing status.
 ---
 
 # PR Body Markdown
 
-## Overview
+## Goal
 
-Use this skill when creating or revising a pull request body so it is concise, readable, and useful for reviewers.
+Write PR bodies that feel polished and human: easy to scan, detailed enough for reviewers, and explicit about testing.
 
-## Format
+## Default Shape
 
-Write the PR body in Markdown with these top-level headings:
+Prefer this structure unless the repo clearly uses a different convention:
 
 ## Summary
 
-- Limit this section to three sentences maximum.
-- Explain the change at a high level and focus on the outcome.
-- Mention the main user, operational, or maintenance impact when relevant.
+- Keep this short.
+- Use one short paragraph or two to four bullets.
+- Explain the outcome and main scope of the change.
+- Mention the user, operational, or maintenance impact when relevant.
+- Include linked issues only when they help with context.
 
-## What
+## Details
 
-- Use a flat bullet list.
-- Describe the concrete changes that were made.
-- Group by logical change area when that is clearer than listing files one by one.
-- For very small PRs, per-file bullets are acceptable when they add clarity.
-- If referencing files, start each bullet with the file path in backticks.
+- Use this section for the concrete changes.
+- Group bullets by workflow, component, feature area, or file only when that grouping improves scanability.
+- Add `###` subheadings when there are distinct change areas worth separating.
+- Start bullets with strong verbs such as `Add`, `Remove`, `Update`, `Align`, or `Refactor`.
+- Mention file paths or workflow names in backticks when helpful, but do not force every bullet into a file-by-file format.
+- Include rationale inline when it helps the reviewer understand why a detail matters.
 
-## Why
+## Test Plan
 
-- Explain the reason for the change in a few sentences or short bullets.
-- State the maintenance, bug fix, security, feature, or operational motivation directly.
-- Do not make the reviewer infer intent from the diff.
+- Always include this section.
+- Use task list items so reviewers can quickly scan what was run and what still needs confirmation.
+- Use `- [x]` for checks that were actually completed.
+- Use `- [ ]` for expected CI checks, manual verification, or follow-up testing that has not completed yet.
+- Mention exact commands, workflows, or reviewer-visible signals when known.
+- If no local testing was run, say so plainly in this section.
 
-## Review Notes
+## Optional Sections
 
-- Include this section only when there is something worth flagging for reviewers.
-- Use it for risk areas, rollout concerns, migration impact, or places that deserve closer manual review.
-- Omit it entirely when there are no notable review callouts.
+- Add `## Review Notes`, `## Risks`, or `## Follow-ups` only when they carry real information.
+- Omit optional sections rather than filling them with boilerplate.
+- Avoid a separate `Why` section unless the motivation is substantial enough that it does not fit naturally into `Summary` or `Details`.
 
-## Validation
-
-- List only checks that were actually run.
-- Explicitly mention any testing that was performed.
-- If no validation was run, say so plainly.
-- If validation was partial, state what was covered, including testing performed, and what was not.
-
-## Style
+## Style Rules
 
 - Prefer plain technical language over marketing phrasing.
+- Keep spacing clean: blank line after headings, then the paragraph or list.
+- Avoid giant paragraphs and avoid one bullet per trivial edit.
 - Do not restate obvious diff details line by line.
-- Do not add filler content, checklist items, or generic background unless the user explicitly asks for them.
-- Do not claim review notes or validation that do not exist.
+- Do not add filler, generic checklists, or generated-by signatures unless the user explicitly asks for them.
+- Do not claim testing, review notes, or follow-up work that did not happen.
 
 ## Example Shape
 
 ```md
 ## Summary
-This PR updates the dependency pins used by the container build and repository workflows. It keeps the runtime image current and aligns the workflow references with newer approved versions.
+This PR aligns the certification workflows with the execution environments they are meant to validate against. It also removes redundant sanity job configuration and makes the expected Python baseline explicit.
 
-## What
-- `Dockerfile`: Bumps the builder and runtime `caddy` base images to the newer release.
-- `.github/workflows/ci.yml`: Updates the pinned `actions/checkout` and `github/codeql-action` references used in CI.
-- `.github/workflows/snyk.yml`: Updates the same pinned workflow references used in the scheduled Snyk scan.
+## Details
 
-## Why
-These updates fold in open dependency maintenance changes and keep the container and workflow dependencies current.
+### `certification-reusable.yml`
+- Remove the per-version sanity input so `ansible-test` can cover supported Python versions automatically.
+- Hard-code the supported stable branches used by downstream execution environments.
+- Add a pre-test step that writes `tests/config.yml` when the collection does not provide one.
 
-## Review Notes
-- The changes are limited to dependency pins and container base image versions; reviewer attention should focus on workflow compatibility and image update risk.
+### Calling workflows
+- Update the reusable workflow callers to stop passing the removed input.
+- Refresh comments and examples so the documented interface matches the workflow behavior.
 
-## Validation
-- No local testing was performed.
+## Test Plan
+- [x] `zizmor` passes locally.
+- [ ] CI passes for the PR workflow matrix.
+- [ ] Sanity jobs run for each supported stable branch.
 ```
