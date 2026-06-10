@@ -1,13 +1,13 @@
 ---
-name: pr-description-markdown
-description: Use when drafting or updating a GitHub pull request description and the user wants a consistent Markdown format that is useful for reviewers. Applies Summary, What, Why, optional Review Notes, and Validation sections with concise, accurate content.
+name: pr-body-markdown
+description: Use when drafting or updating a GitHub pull request body and the user wants a consistent Markdown format that is useful for reviewers. Applies Summary, What, Why, optional Review Notes, and Validation sections with concise, accurate content.
 ---
 
-# PR Description Markdown
+# PR Body Markdown
 
 ## Overview
 
-Use this skill when creating or revising a pull request description so the body is concise, readable, and useful for reviewers.
+Use this skill when creating or revising a pull request body so it is concise, readable, and useful for reviewers.
 
 ## Format
 

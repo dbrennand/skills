@@ -31,5 +31,5 @@ codex plugin marketplace add ~/src/skills
 3. Install the plugin from this marketplace:
 
 ```bash
-codex plugin add pr-description-markdown@dbrennand-skills
+codex plugin add pr-body-markdown@dbrennand-skills
 ```

@@ -5,10 +5,10 @@
   },
   "plugins": [
     {
-      "name": "pr-description-markdown",
+      "name": "pr-body-markdown",
       "source": {
         "source": "local",
-        "path": "./plugins/pr-description-markdown"
+        "path": "./plugins/pr-body-markdown"
       },
       "policy": {
         "installation": "AVAILABLE",
