@@ -4,34 +4,28 @@ This repository is a Git-backed, repo-local Codex plugin marketplace for [dbrenn
 
 It is used to store personal Codex skills as plugins.
 
-Publishing this repository to GitHub helps with distribution and version control, but Codex still installs this marketplace from a local checkout rather than directly from the GitHub URL.
-
-## Install in Codex
+## Install using the Codex App
 
 1. Clone the repository locally:
 
-```bash
-git clone https://github.com/dbrennand/skills.git
-```
+    ```bash
+    git clone https://github.com/dbrennand/skills.git
+    ```
 
-2. Once the repository is cloned locally, you can ask Codex to install the marketplace and plugin(s) for you, or run the commands below manually.
+2. Ask Codex to install the marketplace and plugin(s) from your local checkout.
 
-3. Add your local checkout as a Codex marketplace.
+## Install using the Codex CLI
 
-Use the root of your clone, not the `.agents/plugins` directory, because Codex resolves plugin sources from the marketplace root:
+If you prefer to run the setup yourself:
 
-```bash
-codex plugin marketplace add /path/to/skills
-```
+1. Add your local checkout as a Codex marketplace:
 
-Example:
+    ```bash
+    codex plugin marketplace add /path/to/skills
+    ```
 
-```bash
-codex plugin marketplace add ~/src/skills
-```
+2. Install the plugin from this marketplace:
 
-4. Install the plugin from this marketplace:
-
-```bash
-codex plugin add pr-body-markdown@dbrennand-skills
-```
+    ```bash
+    codex plugin add pr-body-markdown@dbrennand-skills
+    ```
