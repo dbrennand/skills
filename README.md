@@ -14,7 +14,9 @@ Publishing this repository to GitHub helps with distribution and version control
 git clone https://github.com/dbrennand/skills.git
 ```
 
-2. Add your local checkout as a Codex marketplace.
+2. Once the repository is cloned locally, you can ask Codex to install the marketplace and plugin(s) for you, or run the commands below manually.
+
+3. Add your local checkout as a Codex marketplace.
 
 Use the root of your clone, not the `.agents/plugins` directory, because Codex resolves plugin sources from the marketplace root:
 
@@ -28,7 +30,7 @@ Example:
 codex plugin marketplace add ~/src/skills
 ```
 
-3. Install the plugin from this marketplace:
+4. Install the plugin from this marketplace:
 
 ```bash
 codex plugin add pr-body-markdown@dbrennand-skills
