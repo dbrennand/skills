@@ -29,3 +29,17 @@ If you prefer to run the setup yourself:
     ```bash
     codex plugin add pr-body-markdown@dbrennand-skills
     ```
+
+## Run hooks locally
+
+Use `prek` to run the Markdown hooks locally:
+
+```bash
+uvx prek run --all-files
+```
+
+If you want `prek` installed as a Git hook in the clone:
+
+```bash
+uvx prek install --prepare-hooks
+```
