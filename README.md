@@ -6,7 +6,7 @@ It is used to store personal Codex skills as plugins.
 
 The current `git` plugin bundles:
 
-- `pr-body-markdown` for polished, reviewer-friendly pull request bodies
+- `pr-description` for polished, reviewer-friendly pull request descriptions
 - `conventional-commit-message` for commit messages that follow the Conventional Commits 1.0.0 specification
 
 ## Install using the Codex App
