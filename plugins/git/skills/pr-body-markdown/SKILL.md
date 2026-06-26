@@ -1,6 +1,6 @@
 ---
 name: pr-body-markdown
-description: Use when drafting or updating a GitHub pull request body and the user wants a clean Markdown format with a paragraph summary, file/component-grouped details, a checklist test plan, optional breaking changes, and a Codex model signature.
+description: "Use when the user wants to create a PR, draft a PR, open a PR, write or update a GitHub pull request body/description, summarize changes for reviewers, or asks for something like `write the PR description`, `draft the pull request body`, `help me open a PR`, or `turn these changes into a PR`. Produces a clean Markdown PR body with a paragraph summary, file/component-grouped details, a checklist test plan, optional breaking changes, and a Codex model signature."
 ---
 
 # PR Body Markdown
@@ -8,6 +8,18 @@ description: Use when drafting or updating a GitHub pull request body and the us
 ## Goal
 
 Write PR bodies that are easy for maintainers to review: explain why the change exists, group the implementation by files or components, state the test plan clearly, and avoid low-value boilerplate.
+
+## Trigger Examples
+
+Use this skill for requests like:
+
+- `write the PR description`
+- `create a PR`
+- `draft a PR`
+- `draft the pull request body`
+- `summarize this for reviewers`
+- `help me open a PR`
+- `turn these changes into a PR description`
 
 ## Default Shape
 

@@ -1,0 +1,20 @@
+{
+  "name": "git",
+  "version": "0.2.0",
+  "description": "Codex skills for conventional commit messages and polished pull request bodies.",
+  "author": {
+    "name": "dbrennand"
+  },
+  "homepage": "https://github.com/dbrennand/skills",
+  "repository": "https://github.com/dbrennand/skills",
+  "skills": "./skills/",
+  "interface": {
+    "displayName": "Git",
+    "shortDescription": "Write conventional commit messages and clear pull request bodies.",
+    "longDescription": "Adds Codex skills for drafting Conventional Commits 1.0.0 commit messages and concise, reviewer-friendly pull request bodies.",
+    "developerName": "dbrennand",
+    "category": "Productivity",
+    "capabilities": [],
+    "defaultPrompt": "Help me write a conventional commit message or a polished pull request body for this change."
+  }
+}

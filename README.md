@@ -4,6 +4,11 @@ This repository is a Git-backed, repo-local Codex plugin marketplace for [dbrenn
 
 It is used to store personal Codex skills as plugins.
 
+The current `git` plugin bundles:
+
+- `pr-body-markdown` for polished, reviewer-friendly pull request bodies
+- `conventional-commit-message` for commit messages that follow the Conventional Commits 1.0.0 specification
+
 ## Install using the Codex App
 
 1. Clone the repository locally:
@@ -27,7 +32,7 @@ If you prefer to run the setup yourself:
 2. Install the plugin from this marketplace:
 
     ```bash
-    codex plugin add pr-body-markdown@dbrennand-skills
+    codex plugin add git@dbrennand-skills
     ```
 
 ## Run hooks locally
