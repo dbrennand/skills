@@ -29,6 +29,10 @@ uvx prek run --all-files
 
 The current hook suite runs `markdownlint-cli2`. If you change lint coverage, keep `.pre-commit-config.yaml` and `.github/workflows/markdownlint.yml` aligned.
 
+## Release Workflow
+
+- After changes to this repository are committed, re-install the affected Codex plugin(s) so the local Codex environment picks up the committed skill updates.
+
 ## Style
 
 - Use Markdown headings and bullets consistently.
