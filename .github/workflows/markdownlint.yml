@@ -3,6 +3,7 @@ name: Markdown Lint
 on:
   pull_request:
     paths:
+      - "AGENTS.md"
       - "README.md"
       - "plugins/**/SKILL.md"
       - ".markdownlint.jsonc"
@@ -21,5 +22,6 @@ jobs:
         with:
           config: .markdownlint.jsonc
           globs: |
+            AGENTS.md
             README.md
             plugins/**/SKILL.md

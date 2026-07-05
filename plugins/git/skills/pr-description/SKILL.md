@@ -25,6 +25,12 @@ Use this skill for requests like:
 
 Prefer this structure unless the user explicitly asks for a different project template:
 
+## PR Title
+
+- Write a concise reviewer-facing title that describes the change.
+- Do not include `[codex]`, `Codex`, or other generated-by labels in the PR title.
+- Prefer the repository's existing PR title style when it is clear from nearby history.
+
 ## Summary
 
 - Use prose paragraphs, not bullets.
