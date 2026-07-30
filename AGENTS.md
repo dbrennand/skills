@@ -1,40 +1,66 @@
 # Agent Instructions
 
-This repository is a repo-local Codex plugin marketplace for personal skills. It currently publishes a `git` plugin with skills for conventional commit messages and pull request descriptions.
+This repository is a collection of reusable skills for AI coding agents. Each skill lives in its own directory with a `SKILL.md` file containing YAML frontmatter and agent instructions.
 
-## Repository Layout
+## Available Skills
 
-- `README.md` documents installation and local hook usage.
-- `.agents/plugins/marketplace.json` registers the local marketplace and points at `./plugins/git`.
-- `plugins/git/.codex-plugin/plugin.json` is the plugin manifest.
-- `plugins/git/skills/<skill-name>/SKILL.md` contains each skill's metadata and instructions.
-- `.pre-commit-config.yaml`, `.markdownlint.jsonc`, and `.github/workflows/markdownlint.yml` define Markdown linting.
+| Directory | Description |
+|---|---|
+| `conventional-commit-message/` | Write commit messages in Conventional Commits 1.0.0 format |
+| `obsidian-headless-sync/` | Sync the LLM Wiki vault at `/home/hermes/llm-wiki` using Obsidian Headless Sync |
+| `pr-description/` | Draft polished, reviewer-friendly GitHub pull request descriptions |
 
-## Skill Editing
+## Setup
 
-- Keep each skill in its own directory with a `SKILL.md` file.
-- Preserve the YAML front matter at the top of each `SKILL.md`; `name` should match the skill directory name.
-- Write skill instructions as direct, reusable guidance for Codex, with concrete trigger examples and output rules.
-- Prefer small, explicit edits to skill behavior over broad rewrites.
-- When adding or removing skills, update the plugin manifest and README so the published plugin description stays accurate.
-- For the PR description skill, PR titles must not include `[codex]`, `Codex`, or generated-by labels.
+```bash
+git clone https://github.com/dbrennand/skills.git
+cd skills
+```
+
+### Hermes
+
+```bash
+hermes skills install ./conventional-commit-message
+hermes skills install ./obsidian-headless-sync
+hermes skills install ./pr-description
+```
+
+### Codex
+
+Inside a Codex session, use the `$skill-installer` tool with the GitHub directory URL for each skill:
+
+```text
+$skill-installer install https://github.com/dbrennand/skills/tree/main/conventional-commit-message
+$skill-installer install https://github.com/dbrennand/skills/tree/main/obsidian-headless-sync
+$skill-installer install https://github.com/dbrennand/skills/tree/main/pr-description
+```
+
+The skill will be available on your next turn.
+
+### Claude Code
+
+```bash
+# Symlink skills into ~/.claude/skills/ to make them available across all projects
+ln -s "$(pwd)/conventional-commit-message" ~/.claude/skills/conventional-commit-message
+ln -s "$(pwd)/obsidian-headless-sync" ~/.claude/skills/obsidian-headless-sync
+ln -s "$(pwd)/pr-description" ~/.claude/skills/pr-description
+```
+
+Claude automatically discovers skills in `~/.claude/skills/` on next launch. You can then invoke them with `/skill-name` (e.g. `/pr-description`) or Claude loads them automatically when relevant based on the skill's `description` frontmatter.
+
+For per-project use, symlink into a project's `.claude/skills/` directory instead.
 
 ## Validation
 
-Run the project hooks after changes:
+Markdown linting lives in `.github/workflows/markdownlint.yml` and `.markdownlint.jsonc`. Run locally:
 
 ```bash
 uvx prek run --all-files
 ```
 
-The current hook suite runs `markdownlint-cli2`. If you change lint coverage, keep `.pre-commit-config.yaml` and `.github/workflows/markdownlint.yml` aligned.
-
-## Release Workflow
-
-- After changes to this repository are committed, re-install the affected Codex plugin(s) so the local Codex environment picks up the committed skill updates.
-
 ## Style
 
-- Use Markdown headings and bullets consistently.
-- Keep wording concise and reviewer-facing.
-- Do not add generated artifacts or dependency directories to the repository.
+- Each skill is a directory containing a single `SKILL.md` file.
+- `SKILL.md` starts with YAML frontmatter: `name` (matches directory name) and `description`.
+- Keep instructions direct and trigger-aware.
+- When adding or removing skills, update this table and the `README.md`.
