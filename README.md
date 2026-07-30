@@ -1,50 +1,19 @@
-# dbrennand/skills | Codex Plugin Marketplace
+# dbrennand/skills
 
-This repository is a Git-backed, repo-local Codex plugin marketplace for [dbrennand/skills](https://github.com/dbrennand/skills).
+A repository of reusable agent skills for AI coding assistants.
 
-It is used to store personal Codex skills as plugins.
+## Skills
 
-The current `git` plugin bundles:
+- **conventional-commit-message** — Commit messages in Conventional Commits 1.0.0 format
+- **obsidian-headless-sync** — Sync the LLM Wiki vault using Obsidian Headless Sync
+- **pr-description** — Reviewer-friendly GitHub pull request descriptions
 
-- `pr-description` for polished, reviewer-friendly pull request descriptions
-- `conventional-commit-message` for commit messages that follow the Conventional Commits 1.0.0 specification
+## Quick Start
 
-## Install using the Codex App
+See [`AGENTS.md`](AGENTS.md) for setup instructions for Codex, Hermes, and Claude Code.
 
-1. Clone the repository locally:
-
-    ```bash
-    git clone https://github.com/dbrennand/skills.git
-    ```
-
-2. Ask Codex to install the marketplace and plugin(s) from your local checkout.
-
-## Install using the Codex CLI
-
-If you prefer to run the setup yourself:
-
-1. Add your local checkout as a Codex marketplace:
-
-    ```bash
-    codex plugin marketplace add /path/to/skills
-    ```
-
-2. Install the plugin from this marketplace:
-
-    ```bash
-    codex plugin add git@dbrennand-skills
-    ```
-
-## Run hooks locally
-
-Use `prek` to run the Markdown hooks locally:
+## Development
 
 ```bash
-uvx prek run --all-files
-```
-
-If you want `prek` installed as a Git hook in the clone:
-
-```bash
-uvx prek install --prepare-hooks
+uvx prek run --all-files   # run Markdown linting
 ```
