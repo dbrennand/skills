@@ -6,4 +6,4 @@ repos:
         args:
           - --config
           - .markdownlint.jsonc
-        files: ^(AGENTS\.md|README\.md|plugins/.+/SKILL\.md)$
+        files: ^(AGENTS\.md|README\.md|.+SKILL\.md)$
