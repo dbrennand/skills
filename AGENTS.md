@@ -5,7 +5,7 @@ This repository is a collection of reusable skills for AI coding agents. Each sk
 ## Available Skills
 
 | Directory | Description |
-|---|---|
+| --- | --- |
 | `conventional-commit-message/` | Write commit messages in Conventional Commits 1.0.0 format |
 | `obsidian-headless-sync/` | Sync the LLM Wiki vault at `/home/hermes/llm-wiki` using Obsidian Headless Sync |
 | `pr-description/` | Draft polished, reviewer-friendly GitHub pull request descriptions |

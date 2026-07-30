@@ -5,7 +5,7 @@ on:
     paths:
       - "AGENTS.md"
       - "README.md"
-      - "plugins/**/SKILL.md"
+      - "**/SKILL.md"
       - ".markdownlint.jsonc"
       - ".github/workflows/markdownlint.yml"
 
@@ -24,4 +24,4 @@ jobs:
           globs: |
             AGENTS.md
             README.md
-            plugins/**/SKILL.md
+            **/SKILL.md

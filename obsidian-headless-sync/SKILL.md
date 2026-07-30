@@ -56,7 +56,7 @@ ob sync-list-local
 ## Useful Flags
 
 | Flag | Purpose |
-|------|---------|
+| --- | --- |
 | `--path <path>` | Specify vault path (default: current dir) |
 | `--json` | Machine-readable JSON output (most commands) |
 | `--continuous` | Watch for file changes and sync automatically |
