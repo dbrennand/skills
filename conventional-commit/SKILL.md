@@ -1,11 +1,15 @@
 ---
-name: conventional-commit-message
-description: "Use when the user wants to write, rewrite, or tighten a Git commit message into Conventional Commits 1.0.0 format, including requests like `write a commit message`, `make this a conventional commit`, or `help me word this commit`. Produces a commit subject in `<type>[optional scope][!]: <description>` form and adds a body or footers only when the change needs that extra context."
+name: conventional-commit
+description: "Always use when writing Conventional Commit messages."
 ---
 
-# Conventional Commit Message
+# Conventional commit
 
 Write commit messages that follow the [Conventional Commits 1.0.0 specification](https://www.conventionalcommits.org/en/v1.0.0/). Default to a message ready to paste into Git.
+
+## When to Use
+
+Use this skill every time you write, rewrite, or suggest a Git commit message, whether or not the user mentions Conventional Commits.
 
 ## Format
 
