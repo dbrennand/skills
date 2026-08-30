@@ -1,6 +1,6 @@
 ---
 name: obsidian-headless-sync
-description: Work with Obsidian Headless Sync (ob CLI) — sync the LLM Wiki vault at /home/hermes/llm-wiki to the remote after any changes.
+description: Use after making any changes to the LLM Wiki vault at /home/hermes/llm-wiki to sync them to the remote with the ob CLI.
 ---
 
 # Obsidian Headless Sync
