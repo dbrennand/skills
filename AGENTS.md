@@ -19,8 +19,8 @@ cd skills
 ### Hermes
 
 ```bash
-hermes skills install ./conventional-commit
-hermes skills install ./obsidian-headless-sync
+hermes skills install https://raw.githubusercontent.com/dbrennand/skills/main/conventional-commit/SKILL.md
+hermes skills install https://raw.githubusercontent.com/dbrennand/skills/main/obsidian-headless-sync/SKILL.md
 ```
 
 ### Codex
