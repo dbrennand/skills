@@ -3,9 +3,9 @@ name: conventional-commit
 description: "Always use when writing Conventional Commit messages."
 ---
 
-# Conventional commit
+# Conventional Commit
 
-Write commit messages that follow the [Conventional Commits 1.0.0 specification](https://www.conventionalcommits.org/en/v1.0.0/). Default to a message ready to paste into Git.
+Write commit messages that follow the [Conventional Commits 1.0.0 specification](https://www.conventionalcommits.org/en/v1.0.0/).
 
 ## When to Use
 
@@ -29,19 +29,19 @@ Use this skill every time you write, rewrite, or suggest a Git commit message, w
 
 ## Types
 
-| Type | Use for |
-| --- | --- |
-| `feat` | New user-facing or API-facing functionality |
-| `fix` | Bug fix or correctness repair |
-| `docs` | Documentation-only change |
-| `refactor` | Restructuring with no behavior change |
-| `test` | Test-only change |
-| `perf` | Measurable performance improvement |
-| `build` | Build tooling or dependency packaging |
-| `ci` | CI or automation workflow |
-| `chore` | Maintenance that fits nowhere better |
-| `style` | Formatting or whitespace-only |
-| `revert` | Reverting a previous change |
+| Type       | Use for                                     |
+| ---------- | ------------------------------------------- |
+| `feat`     | New user-facing or API-facing functionality |
+| `fix`      | Bug fix or correctness repair               |
+| `docs`     | Documentation-only change                   |
+| `refactor` | Restructuring with no behavior change       |
+| `test`     | Test-only change                            |
+| `perf`     | Measurable performance improvement          |
+| `build`    | Build tooling or dependency packaging       |
+| `ci`       | CI or automation workflow                   |
+| `chore`    | Maintenance that fits nowhere better        |
+| `style`    | Formatting or whitespace-only               |
+| `revert`   | Reverting a previous change                 |
 
 `feat` and `fix` are the only SemVer-meaningful types; the rest are common extensions.
 
