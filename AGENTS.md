@@ -7,6 +7,7 @@ This repository is a collection of reusable skills for AI coding agents. Each sk
 | Directory                 | Description                                                                     |
 | ------------------------- | ------------------------------------------------------------------------------- |
 | `conventional-commit/`    | Write commit messages in Conventional Commits 1.0.0 format                      |
+| `hugo-tailscale-preview/` | Serve Hugo drafts through a Tailscale-only preview server                       |
 | `obsidian-headless-sync/` | Sync the LLM Wiki vault at `/home/hermes/llm-wiki` using Obsidian Headless Sync |
 
 ## Setup
@@ -20,6 +21,7 @@ cd skills
 
 ```bash
 hermes skills install https://raw.githubusercontent.com/dbrennand/skills/main/conventional-commit/SKILL.md
+hermes skills install https://raw.githubusercontent.com/dbrennand/skills/main/hugo-tailscale-preview/SKILL.md
 hermes skills install https://raw.githubusercontent.com/dbrennand/skills/main/obsidian-headless-sync/SKILL.md
 ```
 
@@ -29,6 +31,7 @@ Inside a Codex session, use the `$skill-installer` tool with the GitHub director
 
 ```text
 $skill-installer install https://github.com/dbrennand/skills/tree/main/conventional-commit
+$skill-installer install https://github.com/dbrennand/skills/tree/main/hugo-tailscale-preview
 $skill-installer install https://github.com/dbrennand/skills/tree/main/obsidian-headless-sync
 ```
 
@@ -39,6 +42,7 @@ The skill will be available on your next turn.
 ```bash
 # Symlink skills into ~/.claude/skills/ to make them available across all projects
 ln -s "$(pwd)/conventional-commit" ~/.claude/skills/conventional-commit
+ln -s "$(pwd)/hugo-tailscale-preview" ~/.claude/skills/hugo-tailscale-preview
 ln -s "$(pwd)/obsidian-headless-sync" ~/.claude/skills/obsidian-headless-sync
 ```
 

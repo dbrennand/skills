@@ -5,6 +5,7 @@ A repository of reusable agent skills for AI coding assistants.
 ## Skills
 
 - **conventional-commit** — Commit messages in Conventional Commits 1.0.0 format
+- **hugo-tailscale-preview** — Serve Hugo drafts through a Tailscale-only preview server
 - **obsidian-headless-sync** — Sync the LLM Wiki vault using Obsidian Headless Sync
 
 ## Quick Start
