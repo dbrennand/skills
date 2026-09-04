@@ -51,7 +51,7 @@ The `--buildDrafts` flag includes posts with `draft: true`. If port `1313` is oc
 
 ## Pitfalls
 
-- Tailscale is a VPN. Binding to a Tailscale address provides private tailnet access; it is not a public deployment.
+- Tailscale is a VPN. Binding to a Tailscale address provides private tailnet access.
 - Do not bind to `0.0.0.0` when the goal is Tailscale-only access. Do not substitute `127.0.0.1`, because another device cannot reach a loopback address on the host.
 - Pair a port-bearing `--baseURL` with `--appendPort=false` to avoid duplicate port rewriting.
 - A post with `draft: true` will not appear unless Hugo runs with `--buildDrafts`.
