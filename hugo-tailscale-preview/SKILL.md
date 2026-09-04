@@ -1,13 +1,6 @@
 ---
 name: hugo-tailscale-preview
 description: Serve Hugo drafts through a Tailscale-only preview server.
-version: 0.1.0
-author: Daniel Brennand (dbrennand), Hermes Agent
-license: MIT
-platforms: [linux, macos, windows]
-metadata:
-  tags: [Hugo, Tailscale, Preview]
-  related_skills: []
 ---
 
 # Hugo Tailscale preview
