@@ -26,15 +26,15 @@ Do not use for:
 
 ## Prerequisites
 
-- Hugo is installed and available to `terminal`.
+- Hugo is installed and available to the runtime's command execution capability.
 - The Hugo site path is known.
 - The host is connected to the user's Tailscale network.
-- The host's Tailscale IPv4 address is known, or can be retrieved with `terminal` using `tailscale ip -4`.
+- The host's Tailscale IPv4 address is known, or can be retrieved with the runtime's command execution capability using `tailscale ip -4`.
 - The reviewing device is connected to the same tailnet.
 
 ## How to run
 
-Run Hugo through `terminal` as a background process, binding directly to the host's Tailscale IPv4 address:
+Run Hugo with the runtime's command execution capability as a background process, binding directly to the host's Tailscale IPv4 address:
 
 ```bash
 hugo server \
@@ -50,11 +50,11 @@ Use `--buildDrafts` when the site or post has `draft: true`. Omit it only when s
 
 ## Procedure
 
-1. **Inspect the site.** Use `read_file` to check the site's configuration and the target post's front matter. Confirm whether drafts must be included.
-2. **Find the Tailscale address.** Use `terminal` with `tailscale ip -4`, or use a verified Tailscale IPv4 address supplied by the user. Do not guess the address.
-3. **Start Hugo narrowly.** Use `terminal` to run the command above as a background process. Replace `<site>`, `<tailscale-ip>`, and the port only with verified values.
-4. **Wait for readiness.** Check the process output with `process` until Hugo reports that the web server is available and shows the requested Tailscale bind address.
-5. **Verify locally.** Use `terminal` with `curl --fail --silent --show-error` against `http://<tailscale-ip>:<port>/`. For a draft, also request its rendered route and confirm HTTP success.
+1. **Inspect the site.** Use the runtime's file-reading capability to check the site's configuration and the target post's front matter. Confirm whether drafts must be included.
+2. **Find the Tailscale address.** Use the runtime's command execution capability with `tailscale ip -4`, or use a verified Tailscale IPv4 address supplied by the user. Do not guess the address.
+3. **Start Hugo narrowly.** Use the runtime's command execution and background-process capabilities to run the command above. Replace `<site>`, `<tailscale-ip>`, and the port only with verified values.
+4. **Wait for readiness.** Inspect the background process output with the runtime's process or job-management capability until Hugo reports that the web server is available and shows the requested Tailscale bind address.
+5. **Verify locally.** Use the runtime's command execution capability with `curl --fail --silent --show-error` against `http://<tailscale-ip>:<port>/`. For a draft, also request its rendered route and confirm HTTP success.
 6. **Give the access URL.** Report the exact URL, including the port, and explain that the reviewing device must be connected to the same tailnet.
 7. **Keep the server running.** Leave the background process running while the user reviews the site. Stop it only when the user asks or when the preview is no longer needed.
 
@@ -76,3 +76,15 @@ The preview is ready when all of these are true:
 - The requested draft route returns HTTP success when drafts are enabled.
 - The access URL uses the Tailscale IPv4 address rather than `localhost`, `127.0.0.1`, or `0.0.0.0`.
 - The background process remains running for the duration of the review.
+
+## Runtime mappings
+
+This skill is runtime-neutral. Use the equivalent built-in capability provided by the agent runtime:
+
+| Need | Hermes | Codex | Claude Code |
+| --- | --- | --- | --- |
+| Inspect files | `read_file` | Built-in file tools | Built-in file tools |
+| Run commands | `terminal` | Shell/command execution | Shell/command execution |
+| Manage the Hugo process | Background `terminal` plus `process` | Background shell process and native job controls | Background shell process and native job controls |
+
+Do not require a tool literally named `read_file`, `terminal`, or `process` when another supported runtime provides the equivalent capability under a different name.
