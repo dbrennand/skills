@@ -9,6 +9,7 @@ This repository is a collection of reusable skills for AI coding agents. Each sk
 | `conventional-commit/`    | Write commit messages in Conventional Commits 1.0.0 format                      |
 | `hugo-tailscale-preview/` | Serve Hugo drafts through a Tailscale-only preview server                       |
 | `obsidian-headless-sync/` | Sync the LLM Wiki vault at `/home/hermes/llm-wiki` using Obsidian Headless Sync |
+| `subagent-delegation/`    | Delegate independent work to subagents and verify the results                   |
 
 ## Setup
 
@@ -23,6 +24,7 @@ cd skills
 hermes skills install https://raw.githubusercontent.com/dbrennand/skills/main/conventional-commit/SKILL.md
 hermes skills install https://raw.githubusercontent.com/dbrennand/skills/main/hugo-tailscale-preview/SKILL.md
 hermes skills install https://raw.githubusercontent.com/dbrennand/skills/main/obsidian-headless-sync/SKILL.md
+hermes skills install https://raw.githubusercontent.com/dbrennand/skills/main/subagent-delegation/SKILL.md
 ```
 
 ### Codex
@@ -33,6 +35,7 @@ Inside a Codex session, use the `$skill-installer` tool with the GitHub director
 $skill-installer install https://github.com/dbrennand/skills/tree/main/conventional-commit
 $skill-installer install https://github.com/dbrennand/skills/tree/main/hugo-tailscale-preview
 $skill-installer install https://github.com/dbrennand/skills/tree/main/obsidian-headless-sync
+$skill-installer install https://github.com/dbrennand/skills/tree/main/subagent-delegation
 ```
 
 The skill will be available on your next turn.
@@ -44,6 +47,7 @@ The skill will be available on your next turn.
 ln -s "$(pwd)/conventional-commit" ~/.claude/skills/conventional-commit
 ln -s "$(pwd)/hugo-tailscale-preview" ~/.claude/skills/hugo-tailscale-preview
 ln -s "$(pwd)/obsidian-headless-sync" ~/.claude/skills/obsidian-headless-sync
+ln -s "$(pwd)/subagent-delegation" ~/.claude/skills/subagent-delegation
 ```
 
 Claude automatically discovers skills in `~/.claude/skills/` on next launch. You can then invoke them with `/skill-name` or Claude loads them automatically when relevant based on the `description` frontmatter.
