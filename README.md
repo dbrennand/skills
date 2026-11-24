@@ -4,7 +4,10 @@ A repository of reusable agent skills for AI coding assistants.
 
 ## Skills
 
-- **conventional-commit** — Commit messages in Conventional Commits 1.0.0 format
+| Skill | Description |
+| --- | --- |
+| [conventional-commit](conventional-commit/) | Commit messages in Conventional Commits 1.0.0 format |
+| [deep-pr-review](deep-pr-review/) | Perform rigorous GitHub pull request code reviews with actionable inline comments |
 
 ## Quick Start
 
