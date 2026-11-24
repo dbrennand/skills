@@ -4,10 +4,10 @@ This repository is a collection of reusable skills for AI coding agents. Each sk
 
 ## Available Skills
 
-| Directory              | Description                                                |
-| ---------------------- | ---------------------------------------------------------- |
-| `conventional-commit/` | Write commit messages in Conventional Commits 1.0.0 format |
-
+| Directory              | Description                                                                       |
+|------------------------|-----------------------------------------------------------------------------------|
+| `conventional-commit/` | Write commit messages in Conventional Commits 1.0.0 format                        |
+| `deep-pr-review/`      | Perform rigorous GitHub pull request code reviews with actionable inline comments |
 
 ## Setup
 
